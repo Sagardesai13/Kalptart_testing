@@ -21,7 +21,7 @@ function Navbar() {
             <Link to='#' className='menu-bars'>
               <FaIcons.FaBars onClick={showSidebar} />
             </Link>
-                <div class="container">
+                <div className="container">
                   <img className='m-2' src={logo} />
                   <p className='nav_logotext'>Shree Kalptaru</p>
                 </div>
@@ -51,10 +51,10 @@ function Navbar() {
                 <span>Settings</span>
               </Link>
             </li>
-            <li className='nav-text'>
-              <Link to={'/Logout'}  >
-                <FiIcons.FiLogOut style={{ color: 'red' }} />
-                <span style={{ color: 'red' }}>Logout</span>
+            <li style={{hovercolor: 'white'}} className='nav-text'>
+              <Link to={'/Logout'}>
+                <FiIcons.FiLogOut style={{ color: 'red',hovercolor: 'white'}} />
+                <span className='nav_logout'>Logout</span>
               </Link>
             </li>
           </ul>
