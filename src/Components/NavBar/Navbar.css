@@ -80,11 +80,6 @@
   color: white  !important;
 }
 
-/* .logout-text a:hover{
-  background-color: #00a651;
-  border-radius: 0px;
-  color: white  !important;
-} */
 .nav_logotext{
   font-family: 'Gilroy-SemiBold';
   font-size: 24px;
@@ -127,7 +122,7 @@ span {
 @media (max-width: 767px) and (min-width: 360px){
 
   #navMenu{
-    background-color: #DEFFD1;
+  background-color: #DEFFD1;
   width: 350px;
   height: 1368px;
   display: flex;
