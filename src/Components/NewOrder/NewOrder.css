@@ -11,9 +11,9 @@
     text-align: left;
     font-weight: bold;
 }
-.no-border{
+/* .no-border{
     /* border: 1px solid black; */
-}
+ 
 .no-main{
     margin-top: auto;
     transition: all 0.3s linear 1s;

@@ -1,0 +1,15 @@
+.edit-text{
+    display: flex;
+    width: 207px !important;
+    left: 260px;
+    position: absolute;
+    top: 136px;
+    align-items: baseline;
+}
+
+.editorder-text{
+    width: 113px;
+    border-radius: 0px;
+    font-family: Gilroy-SemiBold;
+    font-size: 24px;
+}
