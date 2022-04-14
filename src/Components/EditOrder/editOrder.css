@@ -1,7 +1,6 @@
 .edit-text{
     display: flex;
     width: 207px !important;
-    height: 100px;
     left: 260px;
     position: absolute;
     top: 136px;
@@ -9,14 +8,8 @@
 }
 
 .editorder-text{
-    height: 29px;
     width: 113px;
-    left: 68px;
-    top: 24px;
     border-radius: 0px;
     font-family: Gilroy-SemiBold;
     font-size: 24px;
-    line-height: 28px;
-    letter-spacing: 0em;
-    text-align: left;
 }
