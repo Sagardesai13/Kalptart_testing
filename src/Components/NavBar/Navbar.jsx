@@ -8,20 +8,59 @@ import { SidebarData } from './Sidebar';
 import './Navbar.css';
 import logo from './logo.png';
 import { IconContext } from 'react-icons';
+import { isClickableInput } from '@testing-library/user-event/dist/utils';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
+<<<<<<< HEAD
   useEffect(()=>{
+=======
+  const showSidebar = () => setSidebar(!sidebar);
+
+  let useClickOutSide = (handler)=>{
+
+    let click = useRef();
+
+    useEffect(()=>{
+
+      let mayBeHandler = (Event) => {
+
+        if(!click.current.contains(Event.target))
+        {
+          handler();
+        }
+      };
+
+      document.addEventListener("mousedown", mayBeHandler);
+
+      return ()=>{
+        document.addEventListener("mousedown", mayBeHandler);
+      }
+  
+    });
+
+    return click;
+  }
+
+  /*useEffect(()=>{
+>>>>>>> 71e334cbcbf8f8a9ec178ad713f77bb3bce790e4
 
     document.addEventListener("mousedown", ()=> {
         setSidebar(false);
     })
 
+  });*/
+
+  let click = useClickOutSide(()=>{
+
+      setSidebar(false);
   });
   const showSidebar = () => {
     setSidebar(!sidebar);
   }
+
+
 
 
   return (
@@ -36,7 +75,7 @@ function Navbar() {
                   <p className='nav_logotext'>Shree Kalptaru</p>
                 </div>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} id="navMenu">
+        <nav ref = {click} className={sidebar ? 'nav-menu active' : 'nav-menu'} id="navMenu">
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-toggle'>
               <Link to='#' className='menu-bars'>
