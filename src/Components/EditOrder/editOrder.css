@@ -2,6 +2,7 @@
     display: flex;
     width: 207px !important;
     left: 260px;
+    align-items: center;
     position: absolute;
     top: 136px;
     align-items: baseline;
@@ -12,4 +13,14 @@
     border-radius: 0px;
     font-family: Gilroy-SemiBold;
     font-size: 24px;
+}
+
+.editorder-data{
+    height: 400px;
+    width: 708px;
+    
+}
+.edit-data{
+    width: 708px !important;
+    list-style: none;
 }

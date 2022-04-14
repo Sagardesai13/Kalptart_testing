@@ -16,6 +16,18 @@ function editOrder() {
     </Link>
         <p className='editorder-text'>Edit Order</p>
         </div>
+        <div className='editorder-data'>
+        {editData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                 Client Name: {item.cname}
+                 <br></br>
+                 Ref No: {item.cname}
+                 <hr></hr>
+                </li>
+              );
+            })}
+        </div>
        
         </>
     )
