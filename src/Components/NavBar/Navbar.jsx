@@ -51,7 +51,7 @@ function Navbar() {
                 <span>Settings</span>
               </Link>
             </li>
-            <li style={{hovercolor: 'white'}} className='nav-text'>
+            <li className='nav-text'>
               <Link to={'/Logout'}>
                 <FiIcons.FiLogOut style={{ color: 'red'}} />
                 <span className='nav_logout'>Logout</span>

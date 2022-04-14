@@ -80,6 +80,14 @@
   color: white  !important;
 }
 
+<<<<<<< HEAD
+=======
+/* .logout-text a:hover{
+  background-color: #00a651;
+  border-radius: 0px;
+  color: white  !important;
+} */
+>>>>>>> 1e34e3571a91565338c8080457303f080d934624
 .nav_logotext{
   font-family: 'Gilroy-SemiBold';
   font-size: 24px;
