@@ -10,7 +10,7 @@ function editOrder() {
   return (
     <>
       <Navbar />
-      <div className="edit-text">
+      <div className="container mt-3 editbackbtn d-flex align-items-center justify-content-start">
         <Link to='../Home'>
           <BiArrowBack className='m-2' style={{ color: 'black', height: '28px', width: '28px', top: '24px', left: '24px' }} />
         </Link>
@@ -30,7 +30,7 @@ function editOrder() {
                   Ref No:
                   <text style={{ 'margin-left': '120px', 'font-weight': 'bold' }}>{item.rno}</text>
                 </div>
-                <div  style={{'margin-top':'-35px', 'margin-left':'662px'}}><Link to={'#'}>{item.icon}</Link></div>
+                <div  style={{'margin-top':'-35px', 'margin-left':'662px'}}><Link style={{color:'black'}} to={'#'}>{item.icon}</Link></div>
                 <hr style={{'margin-top':'30px'}}></hr>
               </li>
             );
