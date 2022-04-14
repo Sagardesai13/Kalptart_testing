@@ -18,9 +18,14 @@
 .editorder-data{
     height: 400px;
     width: 708px;
-    
 }
+
 .edit-data{
     width: 708px !important;
     list-style: none;
+}
+
+#container{
+    margin-left: 292px;
+    margin-top: 108px;
 }

@@ -8,7 +8,6 @@ import { SidebarData } from './Sidebar';
 import './Navbar.css';
 import logo from './logo.png';
 import { IconContext } from 'react-icons';
-import { isClickableInput } from '@testing-library/user-event/dist/utils';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -40,13 +39,6 @@ function Navbar() {
     return click;
   }
 
-  /*useEffect(()=>{
-
-    document.addEventListener("mousedown", ()=> {
-        setSidebar(false);
-    })
-
-  });*/
 
   let click = useClickOutSide(()=>{
 
@@ -74,7 +66,7 @@ function Navbar() {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-            <hr className='first_hr'></hr>
+            <hr className='first_hr' style={{ 'margin-top': '15px'}}></hr>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
