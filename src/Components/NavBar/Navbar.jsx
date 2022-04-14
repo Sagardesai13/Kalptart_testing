@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState , useEffect , useRef} from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as FiIcons from 'react-icons/fi';
@@ -8,14 +8,10 @@ import { SidebarData } from './Sidebar';
 import './Navbar.css';
 import logo from './logo.png';
 import { IconContext } from 'react-icons';
-import { isClickableInput } from '@testing-library/user-event/dist/utils';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
 
-<<<<<<< HEAD
-  useEffect(()=>{
-=======
   const showSidebar = () => setSidebar(!sidebar);
 
   let useClickOutSide = (handler)=>{
@@ -43,23 +39,11 @@ function Navbar() {
     return click;
   }
 
-  /*useEffect(()=>{
->>>>>>> 71e334cbcbf8f8a9ec178ad713f77bb3bce790e4
-
-    document.addEventListener("mousedown", ()=> {
-        setSidebar(false);
-    })
-
-  });*/
 
   let click = useClickOutSide(()=>{
 
       setSidebar(false);
   });
-  const showSidebar = () => {
-    setSidebar(!sidebar);
-  }
-
 
 
 
@@ -82,7 +66,7 @@ function Navbar() {
                 <AiIcons.AiOutlineClose />
               </Link>
             </li>
-            <hr className='first_hr'></hr>
+            <hr className='first_hr' style={{ 'margin-top': '15px'}}></hr>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
