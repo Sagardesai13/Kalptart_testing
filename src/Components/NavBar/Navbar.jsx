@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect , useRef} from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as FiIcons from 'react-icons/fi';
@@ -14,6 +14,14 @@ function Navbar() {
 
   const showSidebar = () => setSidebar(!sidebar);
 
+  useEffect(()=>{
+
+    document.addEventListener("mousedown", ()=> {
+        setSidebar(false);
+    })
+
+  });
+
   return (
     <>
       <IconContext.Provider value={{ color: 'black', hight: '35px', width: '35px' }}>
@@ -26,7 +34,7 @@ function Navbar() {
                   <p className='nav_logotext'>Shree Kalptaru</p>
                 </div>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} id="navMenu">
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-toggle'>
               <Link to='#' className='menu-bars'>
