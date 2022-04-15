@@ -9,7 +9,7 @@ function editOrder() {
   return (
     <>
       <Navbar />
-      <div className="container mt-3 editbackbtn d-flex align-items-center justify-content-start" id='editbackbtn'>
+      <div style={{'width':'160px'}} className=" mt-4 editbackbtn d-flex " id='editbackbtn'>
         <Link to='../Home'>
           <BiArrowBack id='backbtn'/>
         </Link>
@@ -30,7 +30,7 @@ function editOrder() {
                   <text  id='rno'>{item.rno}</text>
                 </div>
                 <div id='editicon'><Link style={{ color: 'black' }} to={'#'}>{item.icon}</Link></div>
-                <hr style={{ 'marginTop': '30px' }}></hr>
+                <hr style={{ 'marginTop': '30px', 'zIndex':'0' }}></hr>
               </li>
             );
           })}
