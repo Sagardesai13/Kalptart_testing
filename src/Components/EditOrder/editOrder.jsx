@@ -22,16 +22,16 @@ function editOrder() {
           {editData.map((item, index) => {
             return (
               <li key={index} className={item.cName}>
-                <div style={{'margin-left':'16px'}}>
+                <div style={{ 'margin-left': '16px' }}>
                   Client Name:
                   <text style={{ 'margin-left': '72px', 'font-weight': 'bold' }}>{item.cname}</text>
                 </div>
-                <div style={{ 'margin-top': '5px', 'margin-left':'16px' }}>
+                <div style={{ 'margin-top': '5px', 'margin-left': '16px' }}>
                   Ref No:
                   <text style={{ 'margin-left': '120px', 'font-weight': 'bold' }}>{item.rno}</text>
                 </div>
-                <div  style={{'margin-top':'-35px', 'margin-left':'662px'}}><Link style={{color:'black'}} to={'#'}>{item.icon}</Link></div>
-                <hr style={{'margin-top':'30px'}}></hr>
+                <div style={{ 'margin-top': '-35px', 'margin-left': '662px' }}><Link style={{ color: 'black' }} to={'#'}>{item.icon}</Link></div>
+                <hr style={{ 'margin-top': '30px' }}></hr>
               </li>
             );
           })}
