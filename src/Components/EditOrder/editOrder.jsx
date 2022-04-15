@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Navbar from '../NavBar/Navbar';
 import { BiArrowBack } from "react-icons/bi";
 import './editOrder.css';
-import Home from '../Home/Home'
 import { editData } from './editData';
 
 function editOrder() {
@@ -22,16 +21,16 @@ function editOrder() {
           {editData.map((item, index) => {
             return (
               <li key={index} className={item.cName}>
-                <div style={{ 'margin-left': '16px' }}>
+                <div style={{ 'marginLeft': '16px' }}>
                   Client Name:
-                  <text style={{ 'margin-left': '72px', 'font-weight': 'bold' }}>{item.cname}</text>
+                  <text style={{ 'marginLeft': '72px', 'fontWeight': 'bold' }}>{item.cname}</text>
                 </div>
-                <div style={{ 'margin-top': '5px', 'margin-left': '16px' }}>
+                <div style={{ 'marginTop': '5px', 'marginLeft': '16px' }}>
                   Ref No:
-                  <text style={{ 'margin-left': '120px', 'font-weight': 'bold' }}>{item.rno}</text>
+                  <text style={{ 'marginLeft': '120px', 'fontWeight': 'bold' }}>{item.rno}</text>
                 </div>
-                <div style={{ 'margin-top': '-35px', 'margin-left': '662px' }}><Link style={{ color: 'black' }} to={'#'}>{item.icon}</Link></div>
-                <hr style={{ 'margin-top': '30px' }}></hr>
+                <div style={{ 'marginTop': '-35px', 'marginLeft': '662px' }}><Link style={{ color: 'black' }} to={'#'}>{item.icon}</Link></div>
+                <hr style={{ 'marginTop': '30px' }}></hr>
               </li>
             );
           })}
