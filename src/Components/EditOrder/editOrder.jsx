@@ -17,10 +17,10 @@ function editOrder() {
       </div>
 
       <div className='container' id="container">
-        <ui className='editorder-data'>
+        <ui className='editorder-data' id="editorder-data">
           {editData.map((item, index) => {
             return (
-              <li key={index} className={item.cName}>
+              <li key={index} className={item.cName} id="editOrder">
                 <div style={{ 'marginLeft': '16px' }}>
                   Client Name:
                   <text style={{ 'marginLeft': '72px', 'fontWeight': 'bold' }}>{item.cname}</text>

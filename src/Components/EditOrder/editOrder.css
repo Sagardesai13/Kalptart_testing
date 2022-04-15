@@ -37,3 +37,24 @@
 .editbackbtn{
     margin-left: 264px !important;
 }
+
+@media screen and (max-width:767px) and (min-width:279px){
+
+    #container{
+        /* margin-left:auto; */
+        display: block;
+        justify-content: center  !important;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    #editorder-data{
+        height: 400px;
+        width: 260px;
+    }
+    
+    #editOrder{
+        width: 255px !important;
+        list-style: none;
+    }
+}
