@@ -9,11 +9,11 @@ function editOrder() {
   return (
     <>
       <Navbar />
-      <div className="container mt-3 editbackbtn d-flex align-items-center justify-content-start">
+      <div className="container mt-3 editbackbtn d-flex align-items-center justify-content-start" id='editbackbtn'>
         <Link to='../Home'>
-          <BiArrowBack className='m-2' style={{ color: 'black', height: '28px', width: '28px', top: '24px', left: '24px' }} />
+          <BiArrowBack id='backbtn'/>
         </Link>
-        <p className='editorder-text'>Edit Order</p>
+        <p className='editorder-text' id='editorder-text' >Edit Order</p>
       </div>
 
       <div className='container' id="container">
@@ -21,15 +21,15 @@ function editOrder() {
           {editData.map((item, index) => {
             return (
               <li key={index} className={item.cName} id="editOrder">
-                <div style={{ 'marginLeft': '16px' }}>
+                <div id='clientdiv'>
                   Client Name:
-                  <text style={{ 'marginLeft': '72px', 'fontWeight': 'bold' }}>{item.cname}</text>
+                  <text id='cname'>{item.cname}</text>
                 </div>
-                <div style={{ 'marginTop': '5px', 'marginLeft': '16px' }}>
+                <div id='refnodiv'>
                   Ref No:
-                  <text style={{ 'marginLeft': '120px', 'fontWeight': 'bold' }}>{item.rno}</text>
+                  <text  id='rno'>{item.rno}</text>
                 </div>
-                <div style={{ 'marginTop': '-35px', 'marginLeft': '662px' }}><Link style={{ color: 'black' }} to={'#'}>{item.icon}</Link></div>
+                <div id='editicon'><Link style={{ color: 'black' }} to={'#'}>{item.icon}</Link></div>
                 <hr style={{ 'marginTop': '30px' }}></hr>
               </li>
             );
