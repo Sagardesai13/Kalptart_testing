@@ -69,13 +69,17 @@ margin-left: 662px;
     margin-left: 380px !important;
 }
 
-@media screen and (max-width:359px) and (min-width:279px){
+@media screen and (max-width:360px) and (min-width:279px){
 
     #container{
         display: block !important;
         justify-content: center  !important ;
         align-items: center !important;
-        margin-top: 8px  !important;
+        margin-top: 28px  !important;
+    }
+
+    #main_container{
+        margin-left: 16px;
     }
 
     #editorder-data{
@@ -87,7 +91,7 @@ margin-left: 662px;
     }
     
     #editOrder{
-        width: 254px !important;
+        width: 304px !important;
         list-style: none;
     }
 
@@ -98,8 +102,8 @@ margin-left: 662px;
         margin-left: 70px !important;
     }
     #editicon{
-        margin-top: -35px;
-        margin-left: 250px !important;
+        margin-top: -30px;
+        margin-left: 287px !important;
         }
     #clientdiv{
         margin-left: -5px !important;
@@ -121,9 +125,13 @@ margin-left: 662px;
         color: #1F1F1F;
         margin: 0 !important;
     }
+
+    #hr1{
+        margin-top: 15px;
+    }
 }
 
-@media screen and (max-width:767px) and (min-width:360px){
+@media screen and (max-width:767px) and (min-width:361px){
     #container{
         display: block  !important;
     }
