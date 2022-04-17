@@ -7,6 +7,10 @@
     margin: 2px;
 }
 
+#main_container{
+    width: 733px;
+}
+
 .edit-text{
     display: flex;
     width: 207px !important;
@@ -79,7 +83,7 @@ margin-left: 662px;
     }
 
     #main_container{
-        margin-left: 16px;
+        width:345px;
     }
 
     #editorder-data{

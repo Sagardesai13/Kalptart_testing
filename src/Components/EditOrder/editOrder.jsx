@@ -9,34 +9,34 @@ function editOrder() {
   return (
     <>
       <Navbar />
-      <div className='container' style={{'width':'733px'}} id="main_container">
-      <div style={{'width':'160px'}} className=" mt-4  d-flex " id='editbackbtn'>
-        <Link to='../Home'>
-          <BiArrowBack id='backbtn'/>
-        </Link>
-        <p className='editorder-text' id='editorder-text' >Edit Order</p>
-      </div>
+      <div className='container' id="main_container">
+        <div style={{ 'width': '160px' }} className=" mt-4  d-flex " id='editbackbtn'>
+          <Link to='../Home'>
+            <BiArrowBack id='backbtn' />
+          </Link>
+          <p className='editorder-text' id='editorder-text' >Edit Order</p>
+        </div>
 
-      <div id="container">
-        <ui id="editorder-data">
-          {editData.map((item, index) => {
-            return (
-              <li key={index} className={item.cName} id="editOrder">
-                <div id='clientdiv'>
-                  Client Name:
-                  <text id='cname'>{item.cname}</text>
-                </div>
-                <div id='refnodiv'>
-                  Ref No:
-                  <text  id='rno'>{item.rno}</text>
-                </div>
-                <div id='editicon'><Link style={{ color: 'black' }} to={'#'}>{item.icon}</Link></div>
-                <hr style={{ 'marginTop': '30px' }} id="hr1"></hr>
-              </li>
-            );
-          })}
-        </ui>
-      </div>
+        <div id="container">
+          <ui id="editorder-data">
+            {editData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName} id="editOrder">
+                  <div id='clientdiv'>
+                    Client Name:
+                    <text id='cname'>{item.cname}</text>
+                  </div>
+                  <div id='refnodiv'>
+                    Ref No:
+                    <text id='rno'>{item.rno}</text>
+                  </div>
+                  <div id='editicon'><Link style={{ color: 'black' }} to={'#'}>{item.icon}</Link></div>
+                  <hr style={{ 'marginTop': '30px' }} id="hr1"></hr>
+                </li>
+              );
+            })}
+          </ui>
+        </div>
       </div>
 
     </>
