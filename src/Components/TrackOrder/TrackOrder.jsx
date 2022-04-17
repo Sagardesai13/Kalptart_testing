@@ -5,14 +5,14 @@ import {RiEqualizerLine} from 'react-icons/ri'
 import { FiEdit2 } from 'react-icons/fi'
 import './TrackOrder.css';
 import ListView from '../Helper/ListView/ListView';
-function editOrder() {
+function TrackOrder() {
   return (
     <>
     <Navbar/>
-        <div className='container no-main no-border pageview'>
+        <div className='container pageview'>
             <div className='to-heading'>
             <div className='to-editorder'>
-              <AiOutlineArrowLeft/>Edit Order
+              <AiOutlineArrowLeft/> Track Order
               </div>
               <div className='to-btns'>
               <button className='to-btn'>Urgent</button>
@@ -22,10 +22,10 @@ function editOrder() {
             </div>
             <div className='to-heading2 mt-4'>
             <div className='to-editorder2'>
-             This Month
+             This Week
               </div>
               <div className='to-btns'>
-              <RiEqualizerLine/>
+              <RiEqualizerLine style={{cursor:'pointer'}}/>
               <div className='to-moretext'>More</div>
               </div>
             </div>
@@ -76,7 +76,7 @@ function editOrder() {
             </div>
 
         </div>
-        <div className='container no-main no-border pageview'>
+        <div className='container pageview'>
             <div className='to-heading2'>
             <div className='to-editorder2'>
              This Month
@@ -137,4 +137,4 @@ function editOrder() {
   )
 }
 
-export default editOrder
+export default TrackOrder

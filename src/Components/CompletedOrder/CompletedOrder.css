@@ -1,4 +1,4 @@
-.to-btns{
+.co-btns{
     width: 70%;
     display: flex;
     justify-content: flex-end;
@@ -7,7 +7,7 @@
     /* border: 1px solid rebeccapurple; */
 }
 
-.to-btn{
+.co-btn{
     outline: none;
     border-radius: 8px;
     align-items: center;
@@ -18,17 +18,13 @@
     background-color: #F9F9FF;
     margin-left: 15px;
 }
-.to-btn:hover{
+.co-btn:hover{
     background-color: var(--lightGreen2);
 }
-.to-editorder{
+.co-editorder{
     width: 30%;
 }
-.to-editorder2{
-    width: 30%;
-    font-family: 'Gilroy-SemiBold';
-}
-.to-heading{
+.co-heading{
     height: auto;
     font-family:cursive;
     display: flex;
@@ -40,55 +36,34 @@
     text-align: left;
     font-weight: bold;
 }
-.to-heading2{
-    height: auto;
-    margin-top: 5px;
-    padding-left: 24px;
-    font-family:cursive;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    font-size: 20px;
-    line-height: 28px;
-    letter-spacing: 0em;
-    text-align: left;
-    font-weight: bold;
-}
-.to-moretext{
-    color: var(--darkGreen);
-    cursor: pointer;
-    /* margin-left: 5px; */
+.no-main{
+    margin-top: auto;
+    transition: all 0.3s linear 1s;
+    padding: 4rem !important;
 }
 
 @media only screen and (max-width: 280px) {
-        .to-btns{
+        .co-btns{
             width: 90% !important;
         }
   }
 @media only screen and (max-width: 600px) {
-    .to-heading{
+    .co-heading{
         flex-direction: column;
     }
-    .to-btns {
+    .co-btns {
         margin-top: 3px;
+        width: fit-content !important;
     }
-    .to-editorder{
+    .co-editorder{
         width: 100% !important;
     }
-    .to-editorder2 {
-        width: 100% ;
-    }
   }
-@media only screen and (max-width: 920px) {
-    .to-editorder {
-        width: 40% ;
+@media only screen and (max-width: 1120px) {
+    .co-editorder {
+        width: 50% ;
     } 
-    .to-btns{
-        width: 60%;
-    }
-  }
-  @media only screen and (max-width: 920px) and (min-width: 767px) {
-    .to-editorder2 {
-        width: 1% !important;
+    .co-btns{
+        width: 50%;
     }
   }
