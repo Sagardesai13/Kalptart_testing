@@ -31,7 +31,7 @@ function editOrder() {
                     <text id='rno'>{item.rno}</text>
                   </div>
                   <div id='editicon'><Link style={{ color: 'black' }} to={'#'}>{item.icon}</Link></div>
-                  <hr style={{ 'marginTop': '30px' }} id="hr1"></hr>
+                  <hr id="hr1"></hr>
                 </li>
               );
             })}
