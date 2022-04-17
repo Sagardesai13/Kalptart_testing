@@ -9,7 +9,7 @@ function editOrder() {
   return (
     <>
       <Navbar />
-      <div id="main_container">
+      <div className='container' style={{'width':'733px'}} id="main_container">
       <div style={{'width':'160px'}} className=" mt-4  d-flex " id='editbackbtn'>
         <Link to='../Home'>
           <BiArrowBack id='backbtn'/>
@@ -17,7 +17,7 @@ function editOrder() {
         <p className='editorder-text' id='editorder-text' >Edit Order</p>
       </div>
 
-      <div className='container' id="container">
+      <div id="container">
         <ui id="editorder-data">
           {editData.map((item, index) => {
             return (
