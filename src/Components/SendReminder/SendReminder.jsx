@@ -8,7 +8,7 @@ function SendReminder() {
   return (
     <>
     <Navbar/>
-        <div className='container pageview'>
+        <div className='container no-main no-border pageview'>
             <div className='sr-heading'>
             <div className='sr-editorder'>
               <AiOutlineArrowLeft/> Track Order

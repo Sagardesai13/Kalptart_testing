@@ -8,7 +8,7 @@ function CompletedOrder() {
   return (
     <>
     <Navbar/>
-        <div className='container pageview'>
+        <div className='container no-main no-border pageview'>
             <div className='co-heading'>
             <div className='co-editorder'>
               <AiOutlineArrowLeft/> Completed Order
