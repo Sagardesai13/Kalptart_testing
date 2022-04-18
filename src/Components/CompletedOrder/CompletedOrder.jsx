@@ -1,8 +1,7 @@
 import React from 'react'
 import Navbar from '../NavBar/Navbar'
 import {AiOutlineArrowLeft} from 'react-icons/ai'
-import {RiEqualizerLine} from 'react-icons/ri'
-import { FiEdit2 } from 'react-icons/fi'
+import { FiRepeat } from 'react-icons/fi'
 import './CompletedOrder.css';
 import ListView from '../Helper/ListView/ListView';
 function CompletedOrder() {
@@ -27,42 +26,42 @@ function CompletedOrder() {
                 property2="Ref No: "
                 value1="Parth Goti"
                 value2="1234"
-                icon={<FiEdit2/>}
+                icon={<FiRepeat/>}
                 />
                 <ListView
                 property1="Client Name: "
                 property2="Ref No: "
                 value1="Parth Goti"
                 value2="1234"
-                icon={<FiEdit2/>}
+                icon={<FiRepeat/>}
                 />
                 <ListView
                 property1="Client Name: "
                 property2="Ref No: "
                 value1="Parth Goti"
                 value2="1234"
-                icon={<FiEdit2/>}
+                icon={<FiRepeat/>}
                 />
                 <ListView
                 property1="Client Name: "
                 property2="Ref No: "
                 value1="Parth Goti"
                 value2="1234"
-                icon={<FiEdit2/>}
+                icon={<FiRepeat/>}
                 />
                 <ListView
                 property1="Client Name: "
                 property2="Ref No: "
                 value1="Parth Goti"
                 value2="1234"
-                icon={<FiEdit2/>}
+                icon={<FiRepeat/>}
                 />
                 <ListView
                 property1="Client Name: "
                 property2="Ref No: "
                 value1="Parth Goti"
                 value2="1234"
-                icon={<FiEdit2/>}
+                icon={<FiRepeat/>}
                 />
             </div>
         </div>
