@@ -8,10 +8,10 @@ function SendReminder() {
   return (
     <>
     <Navbar/>
-        <div className='container no-main no-border pageview'>
+        <div className='container no-main no-border pageview' id="container">
             <div className='sr-heading'>
             <div className='sr-editorder'>
-              <AiOutlineArrowLeft/> Track Order
+              <AiOutlineArrowLeft/> Send Reminder
               </div>
               <div className='sr-btns'>
               <button className='sr-btn'>Urgent</button>
