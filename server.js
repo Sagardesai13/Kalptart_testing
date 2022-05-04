@@ -2,11 +2,14 @@ const express = require('express');
 const path = require('path');
 const mongoose=require('mongoose');
 const cors = require('cors');
-const app=express();
+const app = express();
 const dotenv=require('dotenv');
 dotenv.config();
+
 //Importing Routes
 const userRoutes=require("./routes/user");
+const orderRoutes = require("./routes/order")
+const order = require('./models/order');
 
 
 //Variables from env Files
@@ -40,6 +43,7 @@ app.get('/',(req,res)=>{
 
 //userDefine Routes
 app.use('/api',userRoutes);
+app.use('/api', require('./routes/order'));
 
 //server listening on port
 app.listen(port,(req,res)=>{
