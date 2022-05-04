@@ -1,6 +1,6 @@
 const Order = require('../models/order');
 
-exports.neworder = async (req, res) => {
+exports.newOrders = async (req, res) => {
 
     try {
         const { clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus } = req.body;
@@ -28,4 +28,8 @@ exports.neworder = async (req, res) => {
     } catch (err) {
         return res.status(500).json({ msg: err.message })
     }
+}
+
+exports.getOrders = async (req,res)=>{
+    
 }

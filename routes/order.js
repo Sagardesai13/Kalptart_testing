@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const { neworder } = require("../controllers/order");
+const { newOrders, getOrders } = require("../controllers/order");
 const {requiresignin}  = require("../middleware/authcheck");
 
 
-router.post('/neworder', requiresignin,  neworder);
+router.post('/newOrders', requiresignin,  newOrders);
+router.get('/getOrders', requiresignin, getOrders);
 
 module.exports = router;
