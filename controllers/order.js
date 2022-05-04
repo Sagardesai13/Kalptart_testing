@@ -9,18 +9,18 @@ exports.newOrders = async (req, res) => {
             clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus
         })
 
-        _order.save(async (err,data)=>{
-            if(err){
+        _order.save(async (err, data) => {
+            if (err) {
                 return await res.status(400).json({
-                    message:"Something Went Wrong",
-                    err:err
+                    message: "Something Went Wrong",
+                    err: err
                 })
             }
 
-            if(data){
+            if (data) {
                 return await res.status(200).json({
-                    message:"Registered Successfully!",
-                    data:data
+                    message: "Registered Successfully!",
+                    data: data
                 })
             }
         })
@@ -30,6 +30,21 @@ exports.newOrders = async (req, res) => {
     }
 }
 
-exports.getOrders = async (req,res)=>{
-    
+exports.getOrders = async (req, res) => {
+
+
+    try {
+
+        const orders = await Order.find();
+
+        res.json({
+            status: 'success',
+            result: orders.length,
+            orders: orders
+        })
+
+    } catch (err) {
+        return res.status(500).json({ msg: err.message })
+    }
+
 }
