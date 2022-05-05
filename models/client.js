@@ -1,47 +1,45 @@
-const mongoose=require("mongoose");
+const mongoose = require('mongoose');
 
+const clientSchema = new mongoose.Schema({
+ client_name:{
+     type:String,
+     required:true,
+     min:3,
+     max:30,
+ },
+ client_contact:{
+     type:String,
+     required:true,
+ },
+ client_city:{
+     type:String,
+     required:true
+ },
+ client_state:{
+     type:String,
+     required:true
+ },
+ client_country:{
+     type:String,
+     required:true
+ },
+ client_pincode:{
+     type:String,
+     required:true
+ },
+ createdby:{
+     type:mongoose.Schema.Types.ObjectId,
+     ref:'user',
+     required:true
+ }
+},{timestamps:true})
 
-const clientSchema=new mongoose.Schema({
-    clientId:{
-        type:String,
-        required:true,
-        min:3,
-        max:30
-    },
-    name:{
-        type:String,
-        required:true
-    },
-    email:{
-        type:String
-    },
-    contact:{
-        type:String,
-        required:true,
-    },
-    country:{
-        type:String,
-        required:true,
-        default:'India'
-    },
-    state:{
-        type:String,
-        required:true
-    },
-    city:{
-        type:String,
-        required:true,
-    },
-    pincode:{
-        type:Number,
-        min:6
-    },
-    createBy:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'user',
-        required:true,
-    }
-},{timestamps:true});
+clientSchema.path('client_contact').validate(function validatePhone() {
+    return ( this.client_contact.length==10);
+  });
 
+clientSchema.path('client_pincode').validate(function validatePincode() {
+    return ( this.client_pincode.length==6);
+  });
 
-module.exports=mongoose.model('client',clientSchema);
+  module.exports=mongoose.model('client',clientSchema);

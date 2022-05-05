@@ -1,51 +1,78 @@
 const express = require('express');
-const path = require('path');
-const mongoose=require('mongoose');
+const path =  require('path');
+const dotenv = require('dotenv');
 const cors = require('cors');
+const mongoose = require('mongoose');
+const userRoutes = require('./routes/user');
+const clientRoutes = require('./routes/client');
+const orderRoutes = require("./routes/order");
+const karigarRoutes = require('./routes/karigar');
+const categoryRoutes= require("./routes/category");
+
 const app = express();
-const dotenv=require('dotenv');
+
 dotenv.config();
+var QRCode = require('qrcode');
 
-//Importing Routes
-const userRoutes=require("./routes/user");
-const orderRoutes = require("./routes/order")
-const order = require('./models/order');
+const generateQR = async text =>{
+    try {
+        await QRCode.toFile('./qr1.png',text)
+    } catch (err) {
+        console.log(err);
+    }
+}
+generateQR("https://www.youtube.com/watch?v=yg6zjqfNsbM");
+
+// const generateQR = async text =>{
+//     try {
+//         console.log(await QRCode.toString(text,{type:'terminal'}));
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+// generateQR("https://www.youtube.com/watch?v=yg6zjqfNsbM");
+
+// const generateQR = async text =>{
+//     try {
+//         console.log(await QRCode.toDataURL(text));
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+// generateQR("https://www.youtube.com/watch?v=yg6zjqfNsbM");
 
 
-//Variables from env Files
-const port=process.env.PORT || 5000;
-const MONGO_DB_USER=process.env.MONGO_DB_USER;
-const MONGO_DB_PASSWORD=process.env.MONGO_DB_PASSWORD
-const MONGO_DB_DB=process.env.MONGO_DB_DB;
 
-//configuration for json and cors
-app.use(express.json());
-app.use(cors());
-
-//DB Connection
+const port = process.env.PORT || 5000 ;
+const MONGO_DB_USER= process.env.MONGO_DB_USER;
+const MONGO_DB_PASSWORD = process.env.MONGO_DB_PASSWORD;
+const MONGO_DB_DB = process.env.MONGO_DB_DB;
 
 mongoose.connect(`mongodb+srv://${MONGO_DB_USER}:${MONGO_DB_PASSWORD}@cluster0.ylfqs.mongodb.net/${MONGO_DB_DB}?retryWrites=true&w=majority`,{
     useNewUrlParser:true,
-    useUnifiedTopology:true,
+    useUnifiedTopology:true
 })
 .then(()=>{
-    console.log("Database Connected");
+    console.log('Database Connection successfull');
 }).catch((err)=>{
-    console.log("Database Connection error");
-    console.log(err);
+    console.log('Databse not Connected');
+    console.log(err);  
 });
 
+app.use(express.json());
+app.use(cors());
 
-//default route
 app.get('/',(req,res)=>{
-    res.send("Server is running cool");
+    res.send('Server is running boom guys!!'); 
+})
+app.use('/user',userRoutes);
+app.use('/client',clientRoutes);
+app.use('/karigar',karigarRoutes);
+app.use('/category',categoryRoutes);
+app.use('/order', orderRoutes);
+
+
+app.listen(port,()=>{
+   console.log('Server is running on port: ', +port);
 })
 
-//userDefine Routes
-app.use('/api',userRoutes);
-app.use('/api', require('./routes/order'));
-
-//server listening on port
-app.listen(port,(req,res)=>{
-    console.log("Server is running on : " + port);
-});

@@ -1,8 +1,8 @@
-const express=require("express");
-const { signup,signin } = require("../controllers/user");
-const  {requiresignin}  = require("../middleware/authcheck");
+const exprees = require('express');
+const { signup, signin } = require('../controllers/user');
+const { requiresignin } = require('../middleware/authchech');
 
-const router=express.Router();
+const router=exprees.Router();
 
 router.post('/signup',signup);
 router.post('/signin',signin);
@@ -13,4 +13,5 @@ router.post('/checksignin',requiresignin,(req,res)=>{
     console.log(req.user);
 })
 
-module.exports=router
+
+module.exports= router;

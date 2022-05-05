@@ -1,7 +1,7 @@
-const mongoose=require("mongoose");
-const bcrypt=require("bcrypt");
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
-const userSchema=new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     fullname:{
         type:String,
         required:true,
@@ -10,19 +10,22 @@ const userSchema=new mongoose.Schema({
     },
     hash_password:{
         type:String,
-        required:true
+        required:true,
+
     },
     contact:{
         type:String,
-        required:true
+        required:true,
     }
+},{timestamps:true})
 
-},{timestamps:true});
-
+userSchema.path('contact').validate(function validatePhone() {
+    return ( this.contact.length==10);
+  });
 
 userSchema.methods={
-    authenticate:async function(password){
-        return await bcrypt.compare(password,this.hash_password);
+    authenticate: async function(password){
+        return await bcrypt.compare(password,this.hash_password)
     }
 }
 
