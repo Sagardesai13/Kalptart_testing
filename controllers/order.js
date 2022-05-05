@@ -32,7 +32,6 @@ exports.newOrders = async (req, res) => {
 
 exports.getOrders = async (req, res) => {
 
-
     try {
 
         const orders = await Order.find();
@@ -42,6 +41,54 @@ exports.getOrders = async (req, res) => {
             result: orders.length,
             orders: orders
         })
+
+    } catch (err) {
+        return res.status(500).json({ msg: err.message })
+    }
+
+}
+
+exports.getOrderById = async (req, res) => {
+
+    try {
+
+        const orders = await Order.find({ _id: req.params.id });
+        res.json(orders);
+
+    } catch (err) {
+        return res.status(500).json({ msg: err.message })
+    }
+
+}
+
+exports.deleteOrder = async (req, res) => {
+
+    try {
+
+        await Order.findByIdAndDelete(req.params.id);
+        res.json({ msg: "Deleted a Order" });
+
+    } catch (err) {
+        return res.status(500).json({ msg: err.message })
+    }
+}
+
+
+exports.editOrders = async (req, res) => {
+
+    try {
+
+        const { clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType } = req.body;
+
+
+        await Order.findOneAndUpdate({ _id: req.params.id }, {
+            clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType
+        })
+
+        const orders = await Order.find({ _id: req.params.id });
+        res.json(orders);
+
+        //res.json({ msg: "Updated a Product" })
 
     } catch (err) {
         return res.status(500).json({ msg: err.message })
