@@ -8,6 +8,6 @@ router.post('/newOrders', requiresignin, upload.array("orderImg", 5), newOrders)
 router.get('/getOrders', requiresignin, getOrders);
 router.get('/getOrder/:id', requiresignin, getOrderById);
 router.delete('/deleteOrder/:id', requiresignin, deleteOrder);
-router.put('/editOrders/:id', requiresignin, editOrders);
+router.put('/editOrders/:id', requiresignin, upload.array("orderImg", 5), editOrders);
 
 module.exports = router;

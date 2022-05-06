@@ -4,27 +4,17 @@ const fs = require('fs');
 exports.newOrders = async (req, res) => {
 
     try {
-        const { clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus, orderImg } = req.body;
+        const { clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus } = req.body;
 
         const files = req.files;
 
         if(!files){
 
-            return res.status(400).json(err);
+            return res.status(400).json({ msg: "No image upload" });
         }
 
-        
-
-        // var encode_image = img1.toString('base64');
-
-        // var finalImage = {
-        //     img:new Buffer(encode_image, 'base64')
-            
-        // }
-
-
         const _order = new Order({
-            clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus, orderImg
+            clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus, orderImg:files
         })
 
         _order.save(async (err, data) => {
@@ -43,7 +33,7 @@ exports.newOrders = async (req, res) => {
             }
         })
 
-        console.log(files);
+        //console.log(files);
 
     } catch (err) {
         return res.status(500).json({ msg: err.message })
@@ -86,6 +76,7 @@ exports.deleteOrder = async (req, res) => {
     try {
 
         await Order.findByIdAndDelete(req.params.id);
+        await Order.findByIdAndDelete("62755a227d1d9669fea9e128");
         res.json({ msg: "Deleted a Order" });
 
     } catch (err) {
@@ -98,11 +89,19 @@ exports.editOrders = async (req, res) => {
 
     try {
 
-        const { clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType } = req.body;
+        const { clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus } = req.body;
+
+        const files = req.files;
+
+        if(!files){
+
+            return res.status(400).json({ msg: "No image upload" });
+        }
+
 
 
         await Order.findOneAndUpdate({ _id: req.params.id }, {
-            clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType
+            clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus, orderImg:files
         })
 
         const orders = await Order.find({ _id: req.params.id });
