@@ -2,18 +2,15 @@ const mongoose=require("mongoose");
 
 const orderSchema=new mongoose.Schema({
     clientId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'client',
+        type:String,
         required:true
     },
     karigarId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'karigar',
+        type:String,
         required:true
     },
     orderCategory:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"category",
+        type:String,
         required:true,
     },
     refNo:{
@@ -34,7 +31,7 @@ const orderSchema=new mongoose.Schema({
         required:true,
     },
     deliveryDate:{
-        type:Date,
+        type:String,
         required:true
     },
     melting:{
@@ -75,13 +72,13 @@ const orderSchema=new mongoose.Schema({
 },{timestamps:true});
 
 
-orderSchema.path('orderImg').validate(function (value) {
-    console.log("img length"+value.length);
-    if (value.length >= 5) {
-      throw new Error("Images more than 5 not allowed!");
-    }
-  });
+// orderSchema.path('orderImg').validate(function (value) {
+//     console.log("img length"+value.length);
+//     if (value.length >= 5) {
+//       throw new Error("Images more than 5 not allowed!");
+//     }
+//   });
 
 
-  
+
 module.exports=mongoose.model('order',orderSchema);
