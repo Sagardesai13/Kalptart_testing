@@ -82,4 +82,6 @@ orderSchema.path('orderImg').validate(function (value) {
     }
   });
 
+
+  
 module.exports=mongoose.model('order',orderSchema);
