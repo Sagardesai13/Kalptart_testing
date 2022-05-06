@@ -1,4 +1,6 @@
 const Order = require('../models/order');
+const multer = require('multer');
+const upload = multer({dest:'/uploads/'});
 
 exports.newOrders = async (req, res) => {
 
@@ -93,5 +95,9 @@ exports.editOrders = async (req, res) => {
     } catch (err) {
         return res.status(500).json({ msg: err.message })
     }
-
 }
+
+// exports.getImages = async (req, res) => {
+
+    
+// }

@@ -71,6 +71,9 @@ app.use('/karigar',karigarRoutes);
 app.use('/category',categoryRoutes);
 app.use('/order', orderRoutes);
 
+app.use(express.static(__dirname + '/public'));
+app.use('/uploads', express.static('uploads'));
+
 
 app.listen(port,()=>{
    console.log('Server is running on port: ', +port);
