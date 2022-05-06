@@ -2,6 +2,7 @@ const express = require('express');
 const path =  require('path');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/user');
 const clientRoutes = require('./routes/client');
@@ -61,6 +62,7 @@ mongoose.connect(`mongodb+srv://${MONGO_DB_USER}:${MONGO_DB_PASSWORD}@cluster0.y
 
 app.use(express.json());
 app.use(cors());
+app.use(bodyParser.urlencoded({extended:true}));
 
 app.get('/',(req,res)=>{
     res.send('Server is running boom guys!!'); 

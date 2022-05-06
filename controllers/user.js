@@ -48,7 +48,7 @@ exports.signin= async (req,res)=>{
         if (user) {
             const password = await user.authenticate(req.body.password);
             if (password && user) {
-                const accesstoken = jwt.sign({_id:user._id,name:user.fullname,contact:user.contact},process.env.JWT_SECRET,{expiresIn:"11m"})
+                const accesstoken = jwt.sign({_id:user._id,name:user.fullname,contact:user.contact},process.env.JWT_SECRET,{expiresIn:"60m"})
                 
                 const{_id,fullname,contact} = user;
                 res.status(200).json({
