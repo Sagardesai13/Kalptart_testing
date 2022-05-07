@@ -11,6 +11,10 @@ const clientSchema = new mongoose.Schema({
      type:String,
      required:true,
  },
+ client_email:{
+     type:String,
+     default:"None"
+ },
  client_city:{
      type:String,
      required:true

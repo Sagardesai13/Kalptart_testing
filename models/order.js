@@ -2,20 +2,23 @@ const mongoose=require("mongoose");
 
 const orderSchema=new mongoose.Schema({
     clientId:{
-        type:String,
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'client',
         required:true
     },
     karigarId:{
-        type:String,
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'karigar',
         required:true
     },
     orderCategory:{
-        type:String,
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'category',
         required:true,
     },
     refNo:{
         type:Number,
-        unique:true,
+        
     },
     quantity:{
         type:Number,
@@ -67,6 +70,11 @@ const orderSchema=new mongoose.Schema({
         type:String,
         enum:['New Order','in Process','Karigar Completed','Order Ready','Pending','Delivered'],
         default:'New Order',
+        required:true
+    },
+    createdby:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'user',
         required:true
     }
 },{timestamps:true});

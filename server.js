@@ -13,34 +13,7 @@ const categoryRoutes= require("./routes/category");
 const app = express();
 
 dotenv.config();
-var QRCode = require('qrcode');
 
-const generateQR = async text =>{
-    try {
-        await QRCode.toFile('./qr1.png',text)
-    } catch (err) {
-        console.log(err);
-    }
-}
-generateQR("https://www.youtube.com/watch?v=yg6zjqfNsbM");
-
-// const generateQR = async text =>{
-//     try {
-//         console.log(await QRCode.toString(text,{type:'terminal'}));
-//     } catch (err) {
-//         console.log(err);
-//     }
-// }
-// generateQR("https://www.youtube.com/watch?v=yg6zjqfNsbM");
-
-// const generateQR = async text =>{
-//     try {
-//         console.log(await QRCode.toDataURL(text));
-//     } catch (err) {
-//         console.log(err);
-//     }
-// }
-// generateQR("https://www.youtube.com/watch?v=yg6zjqfNsbM");
 
 
 
@@ -59,7 +32,9 @@ mongoose.connect(`mongodb+srv://${MONGO_DB_USER}:${MONGO_DB_PASSWORD}@cluster0.y
     console.log('Databse not Connected');
     console.log(err);  
 });
-
+app.set('view engine', 'ejs');
+app.use(express.static('public')); 
+app.use('/uploads', express.static('uploads'));
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended:true}));

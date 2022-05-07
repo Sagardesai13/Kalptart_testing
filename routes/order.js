@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { newOrders, getOrders, getOrderById, deleteOrder, editOrders } = require("../controllers/order");
+const { pdfGenerate } = require('../controllers/pdfGenrate');
 const {requiresignin}  = require("../middleware/authcheck");
 const { upload } = require("../middleware/uploads")
 

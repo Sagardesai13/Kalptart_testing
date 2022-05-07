@@ -11,6 +11,10 @@ const karigarSchema = new mongoose.Schema({
      type:String,
      required:true,
  },
+ karigar_email:{
+    type:String,
+    default:"None"
+},
  karigar_city:{
      type:String,
      required:true
