@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { newOrders, getOrders, getOrderById, deleteOrder, editOrders } = require("../controllers/order");
 const {requiresignin}  = require("../middleware/authcheck");
+const { upload } = require("../middleware/uploads")
 
 const { default: mongoose } = require('mongoose');
 var multer  = require('multer')
@@ -17,7 +18,7 @@ var upload = multer({ storage: storage })
 
 
 
-router.post('/newOrders', requiresignin,  newOrders);
+router.post('/newOrders', requiresignin, upload.array("orderImg", 5), newOrders);
 router.get('/getOrders', requiresignin, getOrders);
 router.get('/getOrder/:id', requiresignin, getOrderById);
 router.delete('/deleteOrder/:id', requiresignin, deleteOrder);

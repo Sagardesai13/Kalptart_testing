@@ -1,14 +1,20 @@
 const Order = require('../models/order');
-const multer = require('multer');
-const upload = multer({dest:'/uploads/'});
+const fs = require('fs');
 
 exports.newOrders = async (req, res) => {
 
     try {
-        const { clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus } = req.body;
+        const { clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus, orderImg } = req.body;
+
+        const files = req.files;
+
+        if(!files){
+
+            return res.status(400).json(err);
+        }
 
         const _order = new Order({
-            clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus
+            clientId, karigarId, orderCategory, refNo, quantity, weightFrom, weightTo, deliveryDate, melting, priority, HUID, orderType, orderStatus, orderImg, orderImg:files
         })
 
         _order.save(async (err, data) => {
@@ -26,6 +32,8 @@ exports.newOrders = async (req, res) => {
                 })
             }
         })
+
+        console.log(files);
 
     } catch (err) {
         return res.status(500).json({ msg: err.message })
